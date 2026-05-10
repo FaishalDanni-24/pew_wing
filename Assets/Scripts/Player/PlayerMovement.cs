@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Attributes
-    public Rigidbody2D rbPlayer;
-    public float inputX;
-    public float inputY;
-    public float thrust;
+    private Rigidbody2D rbPlayer;
+    private float inputX;
+    private float inputY;
+    public float transThrust;
+    public float rotThrust;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate is called once per 20 ms (0.02 s)
     void FixedUpdate()
     {
-        rbPlayer.AddForce(transform.up * thrust * inputY);
-        rbPlayer.AddTorque(-(inputX * thrust));
+        rbPlayer.AddForce(transform.up * transThrust * inputY);
+        rbPlayer.AddTorque(-(inputX * rotThrust));
     }
 }
