@@ -6,8 +6,8 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Attributes
     public Rigidbody2D rbPlayer;
-
     public float inputX;
     public float inputY;
     public float thrust;
