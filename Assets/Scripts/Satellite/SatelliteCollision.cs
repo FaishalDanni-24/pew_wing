@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SatelliteCollision : MonoBehaviour
 {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Satellite Collided!");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
