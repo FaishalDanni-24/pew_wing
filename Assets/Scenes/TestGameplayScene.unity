@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 550330002}
   - component: {fileID: 550330007}
   m_Layer: 0
-  m_Name: Asteroid (2)
+  m_Name: Comet (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f3804a685de243a43575c1c8ddf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comet: 1
   speed: 5
 --- !u!61 &550330003
 BoxCollider2D:
@@ -682,7 +683,7 @@ GameObject:
   - component: {fileID: 1114204366}
   - component: {fileID: 1114204371}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: Comet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -700,6 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f3804a685de243a43575c1c8ddf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comet: 1
   speed: 5
 --- !u!50 &1114204367
 Rigidbody2D:
@@ -1289,7 +1291,7 @@ GameObject:
   - component: {fileID: 1550306003}
   - component: {fileID: 1550306008}
   m_Layer: 0
-  m_Name: Asteroid (1)
+  m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,6 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f3804a685de243a43575c1c8ddf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comet: 0
   speed: 5
 --- !u!61 &1550306004
 BoxCollider2D:
@@ -1473,7 +1476,7 @@ GameObject:
   - component: {fileID: 1732385136}
   - component: {fileID: 1732385135}
   m_Layer: 0
-  m_Name: Asteroid (3)
+  m_Name: Asteroid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,6 +1494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f3804a685de243a43575c1c8ddf1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comet: 0
   speed: 5
 --- !u!61 &1732385136
 BoxCollider2D:
@@ -1826,7 +1830,7 @@ SceneRoots:
   - {fileID: 1475710680}
   - {fileID: 2098125973}
   - {fileID: 1114204369}
-  - {fileID: 1550306007}
   - {fileID: 550330006}
+  - {fileID: 1550306007}
   - {fileID: 1732385139}
   - {fileID: 185192803}
