@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,9 @@ public class PlayerPower : MonoBehaviour
 {
     // Attributes
     public int health;
-    public int powerLevel;
+    public Boolean powerLevel;
+    public float timeupPower = 10;
+    private float timePowerPassed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +21,10 @@ public class PlayerPower : MonoBehaviour
     void Update()
     {
         Debug.Log("Player Health: " + health);
+    }
+
+    void FixedUpdate()
+    {
+        timePowerPassed += Time.fixedDeltaTime;
     }
 }
