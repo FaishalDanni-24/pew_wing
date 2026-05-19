@@ -22,7 +22,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "Hostile")
         {
-            gameObject.GetComponent<PlayerPower>().health -= 1;
+            gameObject.GetComponent<PlayerStat>().health -= 1;
         }
         
     }

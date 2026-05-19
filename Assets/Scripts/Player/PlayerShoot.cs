@@ -21,7 +21,6 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         fireBarrel = GameObject.Find("FireBarrel").GetComponent<Transform>();
-        laserPrefab = GameObject.Find("Laser");
     }
 
     // Update is called once per frame
