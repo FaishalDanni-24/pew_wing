@@ -10,7 +10,7 @@ public class LaserLogic : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Laser Collided");
+        Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()

@@ -7,13 +7,15 @@ public class PlayerCollision : MonoBehaviour
     // When trigger collided
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Powerup" && collision.gameObject.GetComponent<ItemLogic>().type == "Health")
+        if (collision.gameObject.CompareTag("Powerup") && collision.gameObject.GetComponent<ItemLogic>().type == "Health")
         {
             Debug.Log("You got health powerup!");
+            gameObject.GetComponent<PlayerStat>().addHealth(1);
         }
-        else if (collision.gameObject.tag == "Powerup" && collision.gameObject.GetComponent<ItemLogic>().type == "Laser")
+        if (collision.gameObject.CompareTag("Powerup") && collision.gameObject.GetComponent<ItemLogic>().type == "Laser")
         {
             Debug.Log("You got laser powerup!");
+            gameObject.GetComponent<PlayerStat>().setPowerLevel();
         }
     }
 
@@ -22,9 +24,8 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "Hostile")
         {
-            gameObject.GetComponent<PlayerStat>().health -= 1;
-        }
-        
+            gameObject.GetComponent<PlayerStat>().addHealth(-1);
+        }    
     }
 
     // Start is called before the first frame update

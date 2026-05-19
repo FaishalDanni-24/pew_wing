@@ -6,15 +6,26 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     // Attributes
-    public int health;
-    public Boolean powerLevel;
-    public float timeupPower = 10;
+    private int health = 5;
+    private int score;
+    private Boolean powerLevel = false;
     private float timePowerPassed;
-    private float score;
+    private float timeupPower = 10;
+    
 
     public void addScore(int score)
     {
         this.score += score;
+    }
+
+    public void addHealth(int health)
+    {
+        this.health += health;
+    }
+
+    public void setPowerLevel()
+    {
+        powerLevel = !powerLevel;
     }
 
     // Start is called before the first frame update
@@ -34,5 +45,10 @@ public class PlayerStat : MonoBehaviour
     void FixedUpdate()
     {
         timePowerPassed += Time.fixedDeltaTime;
+        if (timePowerPassed > timeupPower)
+        {
+            setPowerLevel();
+            timePowerPassed = 0;
+        }
     }
 }
