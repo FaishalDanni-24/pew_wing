@@ -6,7 +6,16 @@ public class SatelliteCollision : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Satellite Collided!");
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(-100);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Hostile"))
+        {
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(-50);
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update

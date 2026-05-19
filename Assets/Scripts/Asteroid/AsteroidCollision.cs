@@ -6,7 +6,17 @@ public class AsteroidCollision : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Asteroid Collided!");
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(10);
+            Destroy(gameObject);
+            // Buat logika buat pecah jadi asteroid kecil
+        }
+
+        if (collision.gameObject.CompareTag("Friend"))
+        {
+            Destroy(gameObject);
+        }        
     }
 
     // Start is called before the first frame update
