@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1113930559552250693}
   - component: {fileID: 4368847288101516081}
   - component: {fileID: 4118114793721015740}
-  - component: {fileID: -9156984344222402814}
+  - component: {fileID: -8330842177880790746}
   m_Layer: 0
-  m_Name: Asteroid
+  m_Name: Small Asteroid
   m_TagString: Hostile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.45554528, w: -0.89021266}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fe6d6db13ed3848b6662b038b17255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-9156984344222402814
+--- !u!114 &-8330842177880790746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,5 +199,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comet: 0
-  smallAst: 0
+  smallAst: 1
   score: 10
