@@ -7,14 +7,15 @@ public class AsteroidMovement : MonoBehaviour
 {
     // Attributes
     private Rigidbody2D rbAst;
-    public Boolean comet;
+    private AsteroidStat stat;
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         rbAst = GetComponent<Rigidbody2D>();
-        if (comet)
+        stat = GetComponent<AsteroidStat>();
+        if (stat.comet)
         {
             speed = speed * 3;
         }
