@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7073018482062442850}
   - component: {fileID: 6261890502835372571}
   - component: {fileID: 7109675773265209492}
+  - component: {fileID: 4387681772832043887}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Friend
@@ -270,3 +271,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d370c48e3fdbde2418732e570d791171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4387681772832043887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818799918064263122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f7f1b15bd479b43bc09fe19b74e17b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 100

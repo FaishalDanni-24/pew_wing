@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5754341090142108215}
   - component: {fileID: 2835106149116567288}
-  - component: {fileID: 1541355660672722263}
   - component: {fileID: 8593648147482225915}
   - component: {fileID: 666576522922704498}
+  - component: {fileID: 1541355660672722263}
   m_Layer: 0
   m_Name: Laser Powerup
   m_TagString: Powerup
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1541355660672722263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3915992012835829737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0ab40725e18a6c44945ebeb42a794bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Laser
 --- !u!61 &8593648147482225915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +159,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1541355660672722263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915992012835829737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ab40725e18a6c44945ebeb42a794bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Laser
