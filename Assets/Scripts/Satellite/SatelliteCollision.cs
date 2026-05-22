@@ -17,6 +17,10 @@ public class SatelliteCollision : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerStat>().addScore(-(stat.score/2));
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update
