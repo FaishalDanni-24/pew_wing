@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SatelliteCollision : MonoBehaviour
 {
+    // Atribut
     SatelliteStat stat;
+
+
+    // Ketika tabrakan antar dua collider
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
@@ -23,8 +27,8 @@ public class SatelliteCollision : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // Dijalankan sekali saat load script
+    void Awake()
     {
         stat = GetComponent<SatelliteStat>();
     }

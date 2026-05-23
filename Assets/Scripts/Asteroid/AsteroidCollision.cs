@@ -4,33 +4,56 @@ using UnityEngine;
 
 public class AsteroidCollision : MonoBehaviour
 {
+    // Atribut untuk tabrakan
+    public GameObject smallAstPrefab;
     AsteroidStat stat;
+
+
+    // Ketika collider masuk ke collider lain
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Projectile"))
+        // Tabrakan laser dengan Asteroid besar
+        if (collision.gameObject.CompareTag("Projectile") && !stat.smallAst)
         {
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score);
-            // Buat logika buat pecah jadi asteroid kecil
-            // Instantiate();
+            Vector3[] spawnCoords= new Vector3[3];
+
+            spawnCoords[0] = new Vector3(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f), 0);
+            spawnCoords[1] = new Vector3(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f), 0);
+            spawnCoords[2] = new Vector3(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f), 0);
+
+            Instantiate(smallAstPrefab, spawnCoords[0], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
+            Instantiate(smallAstPrefab, spawnCoords[1], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
+            Instantiate(smallAstPrefab, spawnCoords[2], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
+
             Destroy(gameObject);
-            
         }
 
+        // Tabrakan laser dengan asteroid kecil
+        if (collision.gameObject.CompareTag("Projectile") && stat.smallAst && !stat.comet)
+        {
+            GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score);
+            Destroy(gameObject);
+        }
+        
+        // Tabrakan laser dengan comet
+        if (collision.gameObject.CompareTag("Projectile") && stat.comet)
+        {
+            GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score*500);
+            Destroy(gameObject);
+        }
+
+        // Tabrakan asteroid dengan satelit
         if (collision.gameObject.CompareTag("Friend"))
         {
             Destroy(gameObject);
         }        
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // Dijalankan sekali saat load script
+    void Awake()
     {
         stat = GetComponent<AsteroidStat>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

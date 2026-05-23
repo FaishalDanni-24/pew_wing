@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float transThrust;
     public float rotThrust;
 
-    // Start is called before the first frame update
-    void Start()
+
+    // Dijalankan sekali saat load script
+    void Awake()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
     }
