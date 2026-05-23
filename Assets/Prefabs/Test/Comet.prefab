@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fe6d6db13ed3848b6662b038b17255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallAstPrefab: {fileID: 7398100256225337200, guid: 518b2e51dcb08ee43a43403e13c2fe37, type: 3}
 --- !u!114 &8459303208857639855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,5 +201,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comet: 1
-  smallAst: 0
+  smallAst: 1
   score: 10
