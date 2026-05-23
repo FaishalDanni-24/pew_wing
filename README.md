@@ -1,4 +1,4 @@
-# pew_wing
+# Pew Wing
 
 Permainan Asteroid menggunakan Game Engine Unity<br><hr>
 
@@ -12,7 +12,7 @@ Faishal Danni (3337240072)<br>
 1. Unity Hub dan Unity Editor 2022.3.62f3
 2. Git
 3. Git LFS
-4. Github Desktop (Memepermudah Version Control)
+4. Github Desktop (Mempermudah Version Control)
 
 # Cara Instalasi Proyek
 Ikuti langkah-langkah berikut untuk menghindari kendala saat setup proyek:
