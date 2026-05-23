@@ -10,6 +10,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject laserPrefab;
     public float laserSpeed;
 
+    // Fungsi untuk menembak
     void shoot()
     {
         GameObject laser = Instantiate(laserPrefab, fireBarrel.transform.position, fireBarrel.transform.rotation);

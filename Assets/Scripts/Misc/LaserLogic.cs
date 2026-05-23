@@ -8,6 +8,7 @@ public class LaserLogic : MonoBehaviour
     CameraController cam;
     float destroyBufferDistance = 3;
 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
@@ -18,12 +19,7 @@ public class LaserLogic : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // FixedUpdate is called once per 20 ms (0.02 s)
     void FixedUpdate()
     {
         // Hapus laser dari scene, jika keluar layar. Diberikan jarak tambahan sebelum hapus

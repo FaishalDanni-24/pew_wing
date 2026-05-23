@@ -10,12 +10,17 @@ public class SatelliteMovement : MonoBehaviour
     private Vector2 dirVector;
     public float speed;
 
+    // Dijalankan sekali saat load script
+    void Awake()
+    {
+        rbSat = GetComponent<Rigidbody2D>();
+        dirVector = new Vector2(transform.up.x, transform.up.y);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
-        rbSat = GetComponent<Rigidbody2D>();
-        dirVector = new Vector2(transform.up.x, transform.up.y);
     }
 
     // Update is called once per frame

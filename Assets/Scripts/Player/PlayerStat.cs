@@ -13,6 +13,7 @@ public class PlayerStat : MonoBehaviour
     private float timeupPower = 10;
     
 
+    // Behavior tambahan yang terjadi di player
     public void addScore(int score)
     {
         this.score += score;
@@ -28,20 +29,15 @@ public class PlayerStat : MonoBehaviour
         powerLevel = !powerLevel;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        // Temporary, will be displayed using GUI
         Debug.Log("Player Health: " + health);
         Debug.Log("Player Score: " + score);
-
     }
 
+    // FixedUpdate is called once per 20 ms (0.02 s)
     void FixedUpdate()
     {
         timePowerPassed += Time.fixedDeltaTime;
