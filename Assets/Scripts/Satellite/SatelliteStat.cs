@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SatelliteStat : MonoBehaviour
 {
+    // Atribut satelit
     public int score = 100;
 }
