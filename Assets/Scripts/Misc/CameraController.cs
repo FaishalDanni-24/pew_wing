@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,13 @@ public class CameraController : MonoBehaviour
 
 
     // Cek apakah gameObject diluar dari layar
-    public bool IsOutofBound(Vector3 position)
+    public bool IsOutofBound(Vector3 position, float bufferDistance=3)
     {
-        if (position.x < borderLeft || position.x > borderRight)
+        if (position.x < borderLeft - bufferDistance || position.x > borderRight + bufferDistance)
         {
             return true;
         }
-        if (position.y < borderBottom || position.y > borderTop)
+        if (position.y < borderBottom - bufferDistance || position.y > borderTop + bufferDistance)
         {
             return true;
         }

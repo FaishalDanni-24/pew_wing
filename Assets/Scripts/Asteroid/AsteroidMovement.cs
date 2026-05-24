@@ -11,6 +11,8 @@ public class AsteroidMovement : MonoBehaviour
     private Vector2 dirVector;
     public float speed;
     public float rotSpeed;
+    private bool hasOutofBounds;
+    private bool currOutofBounds;
 
 
     // Dijalankan sekali saat load script
@@ -25,6 +27,7 @@ public class AsteroidMovement : MonoBehaviour
     {
         cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
         
+        currOutofBounds = cam.IsOutofBound(transform.position);
         if (stat.comet)
         {
             speed = speed * 3;
@@ -39,5 +42,26 @@ public class AsteroidMovement : MonoBehaviour
     {
         rbAst.velocity = dirVector * speed;
         rbAst.rotation += rotSpeed;
+
+        currOutofBounds = cam.IsOutofBound(transform.position);
+
+        // Cek out of bounds (Di luar layar, saat spawn)
+        if (!hasOutofBounds && currOutofBounds)
+        {
+           return; 
+        }
+
+        // Cek out of bounds (Di dalam layar)
+        if (!hasOutofBounds && !currOutofBounds)
+        {
+            hasOutofBounds = true;
+        }
+
+        // Cek out of bounds (Di luar layar, telah melewati area game)
+        if (hasOutofBounds && currOutofBounds)
+        {
+            Destroy(gameObject);
+            GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddNumSpawned(-1);
+        }
     }
 }
