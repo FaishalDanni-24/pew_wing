@@ -45,10 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 7398100256225337200, guid: ba18b2fb370b33e4eab43c9faca00f3a, type: 3}
-  smallAsteroidPrefab: {fileID: 7398100256225337200, guid: 518b2e51dcb08ee43a43403e13c2fe37, type: 3}
   cometPrefab: {fileID: 8107840942579514752, guid: c2cb96942136f0c49b03afd3b9d88de8, type: 3}
   satellitePrefab: {fileID: 7818799918064263122, guid: 35f5ab831c948ea42b174efaf8fa5c46, type: 3}
   destroyedAsteroidCount: 0
   allAsteroidDestroyed: 0
   currTime: 0
-  spawnRate: 1
+  spawnRate: 2
