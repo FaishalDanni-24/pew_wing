@@ -10,6 +10,8 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject asteroidPrefab;
     public GameObject cometPrefab;
     public GameObject satellitePrefab;
+    public GameObject redAlertPrefab;
+    public GameObject blueAlertPrefab;
 
     // Atribut untuk spawning
     int[] asteroidNumArr = {
@@ -20,11 +22,11 @@ public class ObjectSpawner : MonoBehaviour
     int[] specialIndex = {5, 15, 20, 25, 30};
 
     // Atribut untuk cek
-    private int totalDestroyedAsteroidCount;
+    public int totalDestroyedAsteroidCount;
     public int destroyedAsteroidCount;
     public bool allAsteroidDestroyed;
-    private int currRound = 0;
-    private int currSpawnedObject = 0;
+    public int currRound = 0;
+    public int currSpawnedObject = 0;
     public float currTime;
     public float spawnRate;
 
@@ -38,6 +40,10 @@ public class ObjectSpawner : MonoBehaviour
 
     public void AddNumSpawned(int num)
     {
+        if (currSpawnedObject + num < 0)
+        {
+            return;
+        }
         currSpawnedObject += num;
     }
 
@@ -75,9 +81,22 @@ public class ObjectSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(gameObject, 
-        spawnPos,
-        Quaternion.Euler(0, 0, spawnZ));
+        // Spawn alert jika
+        if (gameObject.CompareTag("Friend"))
+        {
+            GameObject alert = Instantiate(blueAlertPrefab, position, Quaternion.Euler(0, 0, angleZ + 180.0f));
+            Destroy(alert, 2.0f);
+        }
+        else if (gameObject.CompareTag("Hostile"))
+        {
+            if (gameObject.GetComponent<AsteroidStat>().comet)
+            {
+                GameObject alert = Instantiate(redAlertPrefab, position, Quaternion.Euler(0, 0, angleZ + 180.0f));
+                Destroy(alert, 2.0f);
+            }
+        }
+
+        Instantiate(gameObject, spawnPos, Quaternion.Euler(0, 0, spawnZ));
     }
     
     // Start is called before the first frame update
@@ -113,11 +132,8 @@ public class ObjectSpawner : MonoBehaviour
         // Atur spawnrate
         switch (currRound)
         {
-            case 3:
+            case 6:
                 spawnRate = 4;
-                break;
-            case 7:
-                spawnRate = 6;
                 break;
             default:
                 break;
@@ -152,11 +168,17 @@ public class ObjectSpawner : MonoBehaviour
                 default:
                     break;
             }
-                
+
             GameObjectSpawner(spawnPrefab, spawnCoords[randSpawnIndex2], spawnRots[randSpawnIndex2], randSpawnIndex2);
 
-            AddNumSpawned(1);
-
+            if (spawnPrefab.CompareTag("Hostile"))
+            {
+                if (!spawnPrefab.GetComponent<AsteroidStat>().comet)
+                {
+                    AddNumSpawned(1);
+                }
+            }
+            
             currTime = 0;
         }
     }

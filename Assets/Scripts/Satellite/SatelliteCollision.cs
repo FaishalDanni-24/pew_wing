@@ -32,10 +32,4 @@ public class SatelliteCollision : MonoBehaviour
     {
         stat = GetComponent<SatelliteStat>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -24,13 +24,15 @@ public class AsteroidCollision : MonoBehaviour
             Instantiate(smallAstPrefab, spawnCoords[0], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
             Instantiate(smallAstPrefab, spawnCoords[1], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
             Instantiate(smallAstPrefab, spawnCoords[2], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
-
+            
+            GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddNumSpawned(-1);
             Destroy(gameObject);
         }
 
         // Tabrakan laser dengan asteroid kecil
         if (collision.gameObject.CompareTag("Projectile") && stat.smallAst && !stat.comet)
         {
+            
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
             GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score);
             Destroy(gameObject);
@@ -40,13 +42,14 @@ public class AsteroidCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile") && stat.comet)
         {
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score*500);
+            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score*10);
             Destroy(gameObject);
         }
 
         // Tabrakan asteroid dengan satelit
         if (collision.gameObject.CompareTag("Friend"))
         {
+            GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddNumSpawned(-1);
             Destroy(gameObject);
         }        
     }
