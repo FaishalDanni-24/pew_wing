@@ -13,6 +13,7 @@ public class LaserLogic : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +24,7 @@ public class LaserLogic : MonoBehaviour
     void FixedUpdate()
     {
         // Hapus laser dari scene, jika keluar layar. Diberikan jarak tambahan sebelum hapus
-        if (transform.position.x < cam.borderLeft - destroyBufferDistance || transform.position.x > cam.borderRight + destroyBufferDistance)
-        {
-            Destroy(gameObject);
-        }
-        if (transform.position.y < cam.borderBottom - destroyBufferDistance || transform.position.y > cam.borderTop + destroyBufferDistance)
+        if (cam.IsOutofBound(transform.position, destroyBufferDistance))
         {
             Destroy(gameObject);
         }
