@@ -19,7 +19,6 @@ public class ObjectSpawner : MonoBehaviour
     };
     Vector3[] spawnCoords = new Vector3[4];
     float[] spawnRots = new float[4];
-    int[] specialIndex = {5, 15, 20, 25, 30};
 
     // Atribut untuk cek
     public int totalDestroyedAsteroidCount;
@@ -133,7 +132,7 @@ public class ObjectSpawner : MonoBehaviour
         switch (currRound)
         {
             case 6:
-                spawnRate = 4;
+                spawnRate = 3;
                 break;
             default:
                 break;
@@ -145,7 +144,7 @@ public class ObjectSpawner : MonoBehaviour
         if (currTime > spawnRate)
         {
             // Logika pilih objek yang dispawn
-            int randSpawnIndex1 = Random.Range(1, 16);
+            int randSpawnIndex1 = Random.Range(1, 3);
             int randSpawnIndex2 = Random.Range(0, 4);
 
             GameObject spawnPrefab = asteroidPrefab;
@@ -157,17 +156,21 @@ public class ObjectSpawner : MonoBehaviour
             }
 
             // Spawn objek spesial sesuai kriteria
-            switch (randSpawnIndex1)
+            if (totalDestroyedAsteroidCount > 0 && totalDestroyedAsteroidCount % 10 == 0)
             {
-                case 5:
-                    spawnPrefab = satellitePrefab;
-                    break;
-                case 12:
-                    spawnPrefab = cometPrefab;
-                    break;
-                default:
-                    break;
+                switch (randSpawnIndex1)
+                {
+                    case 1:
+                        spawnPrefab = satellitePrefab;
+                        break;
+                    case 2:
+                        spawnPrefab = cometPrefab;
+                        break;
+                    default:
+                        break;
+                }
             }
+            
 
             GameObjectSpawner(spawnPrefab, spawnCoords[randSpawnIndex2], spawnRots[randSpawnIndex2], randSpawnIndex2);
 

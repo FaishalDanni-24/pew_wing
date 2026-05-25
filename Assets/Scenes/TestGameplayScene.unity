@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
+  playerHealth: 0
 --- !u!1 &2072095502
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +575,18 @@ PrefabInstance:
     - target: {fileID: 7296427711455893325, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519096543892070572, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32821572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519096543892070572, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0027935132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519096543892070572, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10000001
       objectReference: {fileID: 0}
     - target: {fileID: 8239664297365437470, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
       propertyPath: m_Name

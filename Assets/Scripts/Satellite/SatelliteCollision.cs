@@ -13,12 +13,12 @@ public class SatelliteCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(-stat.score);
+            GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(-stat.score);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Hostile"))
         {
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(-(stat.score/2));
+            GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(-(stat.score/2));
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Player"))
