@@ -9,13 +9,11 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Powerup") && collision.gameObject.GetComponent<ItemLogic>().type == "Health")
         {
-            Debug.Log("You got health powerup!");
-            gameObject.GetComponent<PlayerStat>().addHealth(1);
+            gameObject.GetComponent<PlayerStat>().AddHealth(1);
         }
         if (collision.gameObject.CompareTag("Powerup") && collision.gameObject.GetComponent<ItemLogic>().type == "Laser")
         {
-            Debug.Log("You got laser powerup!");
-            gameObject.GetComponent<PlayerStat>().setPowerLevel();
+            gameObject.GetComponent<PlayerStat>().SetPowerLevel();
         }
     }
 
@@ -24,7 +22,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "Hostile")
         {
-            gameObject.GetComponent<PlayerStat>().addHealth(-1);
+            gameObject.GetComponent<PlayerStat>().AddHealth(-1);
         }    
     }
 }

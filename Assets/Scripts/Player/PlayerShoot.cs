@@ -6,27 +6,50 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {   
     // Attributes
-    private Transform fireBarrel;
+    private Transform fireBarrel1;
+    private Transform fireBarrel2;
+    private Transform fireBarrel3;
+    private PlayerStat stat;
     public GameObject laserPrefab;
     public float laserSpeed;
 
     // Fungsi untuk menembak
-    void shoot()
+    void Shoot(bool powerup)
     {
-        GameObject laser = Instantiate(laserPrefab, fireBarrel.transform.position, fireBarrel.transform.rotation);
-        Rigidbody2D rbLaser = laser.GetComponent<Rigidbody2D>();
-        rbLaser.velocity = new Vector2(laser.transform.up.x * laserSpeed, laser.transform.up.y * laserSpeed);
+        GameObject laser1, laser2;
+        Rigidbody2D rbLaser1, rbLaser2;
+        
+        if (powerup)
+        {
+            laser1 = Instantiate(laserPrefab, fireBarrel2.position, fireBarrel2.rotation);
+            rbLaser1 = laser1.GetComponent<Rigidbody2D>();
+            rbLaser1.velocity = new Vector2(laser1.transform.up.x * laserSpeed, laser1.transform.up.y * laserSpeed);
+
+            laser2 = Instantiate(laserPrefab, fireBarrel3.position, fireBarrel3.rotation);
+            rbLaser2 = laser2.GetComponent<Rigidbody2D>();
+            rbLaser2.velocity = new Vector2(laser2.transform.up.x * laserSpeed, laser2.transform.up.y * laserSpeed);
+        }
+        else
+        {
+            laser1 = Instantiate(laserPrefab, fireBarrel1.position, fireBarrel1.rotation);
+            rbLaser1 = laser1.GetComponent<Rigidbody2D>();
+            rbLaser1.velocity = new Vector2(laser1.transform.up.x * laserSpeed, laser1.transform.up.y * laserSpeed);
+        }
+        
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        fireBarrel = GameObject.Find("FireBarrel").GetComponent<Transform>();
+        stat = GetComponent<PlayerStat>();
+        fireBarrel1 = GameObject.Find("FireBarrel_Normal").GetComponent<Transform>();
+        fireBarrel2 = GameObject.Find("FireBarrel1_Powered").GetComponent<Transform>();
+        fireBarrel3 = GameObject.Find("FireBarrel2_Powered").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){shoot();}
+        if (Input.GetButtonDown("Fire1")){Shoot(stat.GetPowerLevel());}
     }
 }

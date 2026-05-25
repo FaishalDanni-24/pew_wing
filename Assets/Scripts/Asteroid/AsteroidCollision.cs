@@ -6,6 +6,8 @@ public class AsteroidCollision : MonoBehaviour
 {
     // Atribut untuk tabrakan
     public GameObject smallAstPrefab;
+    public GameObject powerPrefab;
+    public GameObject healthPrefab;
     AsteroidStat stat;
 
 
@@ -32,9 +34,24 @@ public class AsteroidCollision : MonoBehaviour
         // Tabrakan laser dengan asteroid kecil
         if (collision.gameObject.CompareTag("Projectile") && stat.smallAst && !stat.comet)
         {
-            
+            int spawnItem = Random.Range(1, 21);
+            GameObject itemPrefab = null;
+
+            switch (spawnItem)
+            {  
+                case 4:
+                    itemPrefab = healthPrefab;
+                    Instantiate(healthPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+                    break;
+                case 17:
+                    itemPrefab = powerPrefab;
+                    Instantiate(powerPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+                    break;
+                default:
+                    break;
+            }
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score);
+            GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(stat.score);
             Destroy(gameObject);
         }
         
@@ -42,7 +59,7 @@ public class AsteroidCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile") && stat.comet)
         {
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
-            GameObject.Find("Player").GetComponent<PlayerStat>().addScore(stat.score*10);
+            GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(stat.score*10);
             Destroy(gameObject);
         }
 

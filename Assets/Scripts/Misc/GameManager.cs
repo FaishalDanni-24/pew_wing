@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public int playerScore;
+    public int playerHealth;
 
     // Dijalankan sekali saat load script
     void Awake()
