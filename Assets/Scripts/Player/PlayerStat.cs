@@ -14,19 +14,34 @@ public class PlayerStat : MonoBehaviour
     
 
     // Behavior tambahan yang terjadi di player
-    public void addScore(int score)
+    public void AddScore(int score)
     {
         this.score += score;
     }
 
-    public void addHealth(int health)
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void AddHealth(int health)
     {
         this.health += health;
     }
 
-    public void setPowerLevel()
+    public void SetPowerLevel()
     {
         powerLevel = !powerLevel;
+    }
+
+    public bool GetPowerLevel()
+    {
+        return powerLevel;
     }
 
     // Update is called once per frame
@@ -41,9 +56,9 @@ public class PlayerStat : MonoBehaviour
     void FixedUpdate()
     {
         timePowerPassed += Time.fixedDeltaTime;
-        if (timePowerPassed > timeupPower)
+        if (timePowerPassed > timeupPower && powerLevel)
         {
-            setPowerLevel();
+            SetPowerLevel();
             timePowerPassed = 0;
         }
     }
