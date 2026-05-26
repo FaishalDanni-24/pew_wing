@@ -55,11 +55,14 @@ public class PlayerStat : MonoBehaviour
     // FixedUpdate is called once per 20 ms (0.02 s)
     void FixedUpdate()
     {
-        timePowerPassed += Time.fixedDeltaTime;
+        if (GetPowerLevel())
+        {
+            timePowerPassed += Time.fixedDeltaTime;
         if (timePowerPassed > timeupPower && powerLevel)
         {
             SetPowerLevel();
             timePowerPassed = 0;
+        }
         }
     }
 }
