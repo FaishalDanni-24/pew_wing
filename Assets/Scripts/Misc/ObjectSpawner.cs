@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -25,12 +24,25 @@ public class ObjectSpawner : MonoBehaviour
     public int destroyedAsteroidCount;
     public bool allAsteroidDestroyed;
     public int currRound = 0;
+    private int maxRound;
     public int currSpawnedObject = 0;
     public float currTime;
     public float spawnRate;
 
 
     // Menambahkan jumlah asteroid yang hancur
+    public int GetRound(bool curr)
+    {
+        if (curr)
+        {
+            return currRound;
+        }
+        else
+        {
+            return maxRound;
+        }
+    }
+
     public void AddCount()
     {
         totalDestroyedAsteroidCount += 1;
@@ -101,6 +113,7 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxRound = asteroidNumArr.Length;
         cam = GameObject.Find("Main Camera").GetComponent<CameraController>();
         spawnCoords[0] = new Vector3(cam.borderLeft, 0, 0);
         spawnCoords[1] = new Vector3(cam.borderRight, 0, 0);
