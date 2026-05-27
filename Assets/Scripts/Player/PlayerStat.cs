@@ -6,7 +6,10 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     // Attributes
-    private int health = 5;
+    private bool invincibility = false;
+    private float timeInvinciblePassed;
+    private float timeupInvincible = 5;
+    public int health = 5;
     private int score;
     private Boolean powerLevel = false;
     private float timePowerPassed;
@@ -18,7 +21,6 @@ public class PlayerStat : MonoBehaviour
     {
         this.score += score;
     }
-
     public int GetScore()
     {
         return score;
@@ -28,20 +30,31 @@ public class PlayerStat : MonoBehaviour
     {
         return health;
     }
-
     public void AddHealth(int health)
     {
+        if (invincibility)
+        {
+            return;
+        }
         this.health += health;
     }
 
-    public void SetPowerLevel()
+    public void SetPowerLevel(bool powerLevel)
     {
-        powerLevel = !powerLevel;
+        this.powerLevel = powerLevel;
     }
-
     public bool GetPowerLevel()
     {
         return powerLevel;
+    }
+
+    public void SetInvicinbility(bool invincibility)
+    {
+        this.invincibility = invincibility;
+    }
+    public bool GetInvicinbility()
+    {
+        return invincibility;
     }
 
     // Update is called once per frame
@@ -55,11 +68,24 @@ public class PlayerStat : MonoBehaviour
     // FixedUpdate is called once per 20 ms (0.02 s)
     void FixedUpdate()
     {
-        timePowerPassed += Time.fixedDeltaTime;
-        if (timePowerPassed > timeupPower && powerLevel)
+        if (GetPowerLevel())
         {
-            SetPowerLevel();
-            timePowerPassed = 0;
+            timePowerPassed += Time.fixedDeltaTime;
+            if (timePowerPassed > timeupPower)
+            {
+                SetPowerLevel(false);
+                timePowerPassed = 0;
+            }
+        }
+
+        if (GetInvicinbility())
+        {
+            timeInvinciblePassed += Time.fixedDeltaTime;
+            if (timeInvinciblePassed > timeupInvincible)
+            {
+                SetInvicinbility(false);
+                timeInvinciblePassed = 0;
+            }
         }
     }
 }

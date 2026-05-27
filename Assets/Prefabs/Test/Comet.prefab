@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallAstPrefab: {fileID: 7398100256225337200, guid: 518b2e51dcb08ee43a43403e13c2fe37, type: 3}
+  powerPrefab: {fileID: 0}
+  healthPrefab: {fileID: 0}
 --- !u!114 &8459303208857639855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac421ebf0694ca4f9ead8b65a0859d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 5aaf4655a3b49814fa30f5a6af44b4ca, type: 3}
+  - {fileID: 21300000, guid: 56a53e8bdd63e58499dcc1e0830f8ebc, type: 3}
+  - {fileID: 21300000, guid: 3f054bb9234a0164fa802bf8fac91810, type: 3}
+  - {fileID: 21300000, guid: d05a0bfb6743b204ca8f27d985c05084, type: 3}
   comet: 1
   smallAst: 1
   score: 10

@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Powerup") && collision.gameObject.GetComponent<ItemLogic>().type == "Laser")
         {
-            gameObject.GetComponent<PlayerStat>().SetPowerLevel();
+            gameObject.GetComponent<PlayerStat>().SetPowerLevel(true);
         }
     }
 
@@ -23,6 +23,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "Hostile")
         {
             gameObject.GetComponent<PlayerStat>().AddHealth(-1);
+            gameObject.GetComponent<PlayerStat>().SetInvicinbility(true);
         }    
     }
 }
