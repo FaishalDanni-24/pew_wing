@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    static int currGameState = 1;
+    static string currGameScene;
     static int playerScore;
     static int playerHealth;
 
@@ -22,8 +22,16 @@ public class GameManager : MonoBehaviour
     {
         if (playerHealth <= 0 || GameObject.Find("Spawner").GetComponent<ObjectSpawner>().GetRound(true) == GameObject.Find("Spawner").GetComponent<ObjectSpawner>().GetRound(false)-1)
         {
-            currGameState = 2;
-            ChangeScene("GameOverScene");
+            currGameScene = "GameOverScene";
+            ChangeScene(currGameScene);
+        }
+    }
+    public static void InputChangeScene(string sceneName)
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            currGameScene = sceneName;
+            ChangeScene(currGameScene);
         }
     }
 
@@ -38,29 +46,25 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        currGameScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
     void Update()
     {   
-        switch (currGameState)
+        switch (currGameScene)
         {
-            case 0:
-                // Run script start menu
+            case "StartScene":
+                InputChangeScene("GameScene");
                 break;
-            case 1:
+            case "GameScene":
                 playerHealth = GameObject.Find("Player").GetComponent<PlayerStat>().GetHealth();
                 playerScore = GameObject.Find("Player").GetComponent<PlayerStat>().GetScore();
                 IsGameOver();
                 break;
-            case 2:
-                // Run script gameover menu
+            case "GameOverScene":
+                InputChangeScene("StartScene");
                 break;
             default:
                 break;
