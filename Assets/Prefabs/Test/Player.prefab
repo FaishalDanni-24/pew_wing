@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 8458772759596843682}
   - component: {fileID: 989404396192923714}
   - component: {fileID: 8879678365187160789}
+  - component: {fileID: 2276543823447352969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -265,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6cef91fe451d145ac7b4964c8845bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
 --- !u!60 &8879678365187160789
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -315,3 +317,24 @@ PolygonCollider2D:
       - {x: -0.24953094, y: -0.23191565}
       - {x: -0.24953094, y: -0.23191565}
   m_UseDelaunayMesh: 0
+--- !u!95 &2276543823447352969
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8239664297365437470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a53b01d4f43f59468b5fa2d0e19cb0c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
