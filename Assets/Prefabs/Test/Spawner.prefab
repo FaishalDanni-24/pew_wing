@@ -45,11 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 7398100256225337200, guid: ba18b2fb370b33e4eab43c9faca00f3a, type: 3}
-  cometPrefab: {fileID: 8107840942579514752, guid: c2cb96942136f0c49b03afd3b9d88de8, type: 3}
+  cometPrefab: {fileID: 8107840942579514752, guid: f187d29e018fa9f4a936a43e0f906f0b, type: 3}
   satellitePrefab: {fileID: 7818799918064263122, guid: 35f5ab831c948ea42b174efaf8fa5c46, type: 3}
   redAlertPrefab: {fileID: 7448981377367515582, guid: 5d47567c7dc65564b8a6860f21b18905, type: 3}
   blueAlertPrefab: {fileID: 1036637625579258146, guid: 9531751b4ca71d54fbe3c44df787c9aa, type: 3}
+  totalDestroyedAsteroidCount: 0
   destroyedAsteroidCount: 0
   allAsteroidDestroyed: 0
+  currRound: 0
+  currSpawnedObject: 0
   currTime: 0
   spawnRate: 2

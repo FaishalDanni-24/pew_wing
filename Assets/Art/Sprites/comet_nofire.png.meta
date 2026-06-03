@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bb38f0a1fa3499b4a95a258c3614acfd
+guid: ed74e6f1903520f42bab80daee144cb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,127 +97,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: comet_0
+      name: comet_nofire_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 5
-        width: 29
-        height: 20
-      alignment: 9
-      pivot: {x: 0.3413743, y: 0.50000006}
+        x: 3
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c57d118fde8554f9b7dbabea750f86
-      internalID: 1010501444
+      spriteID: 9c5659c961c8edc4a930f646e97d8a47
+      internalID: -2068012889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_1
+      name: comet_nofire_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 5
-        width: 36
-        height: 20
-      alignment: 9
-      pivot: {x: 0.26901, y: 0.49115378}
+        x: 53
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b37b3ace970b8ca4faafd1d043365b44
-      internalID: 86439641
+      spriteID: 51b90187f07b9514286aad98354ec064
+      internalID: -342085657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_2
+      name: comet_nofire_2
       rect:
         serializedVersion: 2
-        x: 102
-        y: 5
-        width: 43
-        height: 20
-      alignment: 9
-      pivot: {x: 0.2284356, y: 0.44692126}
+        x: 103
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4458e65ffca3fa44bc15063941c308c
-      internalID: -193346197
+      spriteID: dba31523a5f8a2e428491ce1803e68fe
+      internalID: -951727959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_3
+      name: comet_nofire_3
       rect:
         serializedVersion: 2
-        x: 152
-        y: 5
-        width: 40
-        height: 20
-      alignment: 9
-      pivot: {x: 0.2346077, y: 0.50884664}
+        x: 153
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ab2530c87ced774ab432547cd6d694c
-      internalID: 1083079646
+      spriteID: 743249e807c7b7f48b820cc7ee7a04a8
+      internalID: -1913456891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_4
+      name: comet_nofire_4
       rect:
         serializedVersion: 2
-        x: 202
-        y: 5
-        width: 36
-        height: 20
-      alignment: 9
-      pivot: {x: 0.27392495, y: 0.47346082}
+        x: 203
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acaa7517aa346734babba0aeef38121c
-      internalID: 972254841
+      spriteID: 06dc54aae1d12e747a525869020d19dc
+      internalID: 1177129197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_5
+      name: comet_nofire_5
       rect:
         serializedVersion: 2
-        x: 252
-        y: 5
-        width: 30
-        height: 20
-      alignment: 9
-      pivot: {x: 0.3171753, y: 0.50000006}
+        x: 253
+        y: 6
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f15ff59a0cc3d643a16441c746b226b
-      internalID: 687980817
+      spriteID: 97dea4706b2df414ca798214df96634d
+      internalID: 447538786
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      comet_0: 1010501444
-      comet_1: 86439641
-      comet_2: -193346197
-      comet_3: 1083079646
-      comet_4: 972254841
-      comet_5: 687980817
+      comet_nofire_0: -2068012889
+      comet_nofire_1: -342085657
+      comet_nofire_2: -951727959
+      comet_nofire_3: -1913456891
+      comet_nofire_4: 1177129197
+      comet_nofire_5: 447538786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

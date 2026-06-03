@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bb38f0a1fa3499b4a95a258c3614acfd
+guid: ade173ba473046549a312e2e978fc6f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,127 +97,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: comet_0
+      name: comet_flame_0
       rect:
         serializedVersion: 2
         x: 2
         y: 5
         width: 29
         height: 20
-      alignment: 9
-      pivot: {x: 0.3413743, y: 0.50000006}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c57d118fde8554f9b7dbabea750f86
-      internalID: 1010501444
+      spriteID: 29535f321968f8e4486386e0d5c19977
+      internalID: 1263885730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_1
+      name: comet_flame_1
       rect:
         serializedVersion: 2
         x: 52
         y: 5
         width: 36
         height: 20
-      alignment: 9
-      pivot: {x: 0.26901, y: 0.49115378}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b37b3ace970b8ca4faafd1d043365b44
-      internalID: 86439641
+      spriteID: 720247f0f59f6914cb46d9d67cb5ef0a
+      internalID: 1025390223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_2
+      name: comet_flame_2
       rect:
         serializedVersion: 2
         x: 102
         y: 5
         width: 43
         height: 20
-      alignment: 9
-      pivot: {x: 0.2284356, y: 0.44692126}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4458e65ffca3fa44bc15063941c308c
-      internalID: -193346197
+      spriteID: d76fe43304014fa44b8e6394ddf5ecd2
+      internalID: -368766368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_3
+      name: comet_flame_3
       rect:
         serializedVersion: 2
         x: 152
         y: 5
         width: 40
         height: 20
-      alignment: 9
-      pivot: {x: 0.2346077, y: 0.50884664}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ab2530c87ced774ab432547cd6d694c
-      internalID: 1083079646
+      spriteID: 30e6bf2f0ce27f24caabb2b8485d84cb
+      internalID: 1840323887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_4
+      name: comet_flame_4
       rect:
         serializedVersion: 2
         x: 202
         y: 5
         width: 36
         height: 20
-      alignment: 9
-      pivot: {x: 0.27392495, y: 0.47346082}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acaa7517aa346734babba0aeef38121c
-      internalID: 972254841
+      spriteID: b6055d9f37ac858469b99bda120b81b7
+      internalID: -722468845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: comet_5
+      name: comet_flame_5
       rect:
         serializedVersion: 2
         x: 252
         y: 5
         width: 30
         height: 20
-      alignment: 9
-      pivot: {x: 0.3171753, y: 0.50000006}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f15ff59a0cc3d643a16441c746b226b
-      internalID: 687980817
+      spriteID: 184f65238822b65448f5a43a403eb628
+      internalID: -1310903419
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      comet_0: 1010501444
-      comet_1: 86439641
-      comet_2: -193346197
-      comet_3: 1083079646
-      comet_4: 972254841
-      comet_5: 687980817
+      comet_flame_0: 1263885730
+      comet_flame_1: 1025390223
+      comet_flame_2: -368766368
+      comet_flame_3: 1840323887
+      comet_flame_4: -722468845
+      comet_flame_5: -1310903419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
