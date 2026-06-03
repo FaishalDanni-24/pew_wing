@@ -41,8 +41,11 @@ public class AsteroidMovement : MonoBehaviour
     void FixedUpdate()
     {
         rbAst.velocity = dirVector * speed;
-        rbAst.rotation += rotSpeed;
-
+        if (!stat.comet)
+        {
+            rbAst.rotation += rotSpeed;
+        }
+        
         currOutofBounds = cam.IsOutofBound(transform.position);
 
         // Cek out of bounds (Di luar layar, saat spawn)
