@@ -13,6 +13,10 @@ public class PlayerShoot : MonoBehaviour
     public GameObject laserPrefab;
     public float laserSpeed;
 
+    [Header("Pengaturan Audio Tembakan")]
+    public AudioSource audioSource;
+    public AudioClip shootSFX;
+
     // Fungsi untuk menembak
     void Shoot(bool powerup)
     {
@@ -35,7 +39,12 @@ public class PlayerShoot : MonoBehaviour
             rbLaser1 = laser1.GetComponent<Rigidbody2D>();
             rbLaser1.velocity = new Vector2(laser1.transform.up.x * laserSpeed, laser1.transform.up.y * laserSpeed);
         }
-        
+
+        // Trigger suara tembakan setelah peluru di-instantiate
+        if (audioSource != null && shootSFX != null)
+        {
+            audioSource.PlayOneShot(shootSFX);
+        }
     }
 
     // Start is called before the first frame update
