@@ -3,7 +3,10 @@ guid: 7abd87282ffc50b4bbe286c6ad45eee5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - laserPrefab: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - shootSFX: {fileID: 8300000, guid: e16929f451fe84e438aa412b91916a8b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
