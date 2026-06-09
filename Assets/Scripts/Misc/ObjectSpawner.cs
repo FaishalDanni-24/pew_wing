@@ -12,6 +12,12 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject redAlertPrefab;
     public GameObject blueAlertPrefab;
 
+    // --- TAMBAHAN AUDIO ---
+    // Akan memunculkan slot di Inspector untuk memasukkan file suara
+    public AudioClip redAlertSound;
+    public AudioClip blueAlertSound;
+    // ----------------------
+
     // Atribut untuk spawning
     int[] asteroidNumArr = {
         6, 12, 24, 42, 66, 108, 174, 282, 456, 738
@@ -96,6 +102,14 @@ public class ObjectSpawner : MonoBehaviour
         if (gameObject.CompareTag("Friend"))
         {
             GameObject alert = Instantiate(blueAlertPrefab, position, Quaternion.Euler(0, 0, angleZ + 180.0f));
+            
+            // --- TAMBAHAN AUDIO: Putar suara Blue Alert ---
+            if (blueAlertSound != null) 
+            {
+                AudioSource.PlayClipAtPoint(blueAlertSound, position);
+            }
+            // ----------------------------------------------
+            
             Destroy(alert, 2.0f);
         }
         else if (gameObject.CompareTag("Hostile"))
@@ -103,6 +117,14 @@ public class ObjectSpawner : MonoBehaviour
             if (gameObject.GetComponent<AsteroidStat>().comet)
             {
                 GameObject alert = Instantiate(redAlertPrefab, position, Quaternion.Euler(0, 0, angleZ + 180.0f));
+                
+                // --- TAMBAHAN AUDIO: Putar suara Red Alert ---
+                if (redAlertSound != null) 
+                {
+                    AudioSource.PlayClipAtPoint(redAlertSound, position);
+                }
+                // ---------------------------------------------
+
                 Destroy(alert, 2.0f);
             }
         }

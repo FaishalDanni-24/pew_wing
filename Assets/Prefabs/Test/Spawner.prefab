@@ -49,6 +49,8 @@ MonoBehaviour:
   satellitePrefab: {fileID: 7818799918064263122, guid: 35f5ab831c948ea42b174efaf8fa5c46, type: 3}
   redAlertPrefab: {fileID: 7448981377367515582, guid: 5d47567c7dc65564b8a6860f21b18905, type: 3}
   blueAlertPrefab: {fileID: 1036637625579258146, guid: 9531751b4ca71d54fbe3c44df787c9aa, type: 3}
+  redAlertSound: {fileID: 8300000, guid: 95267770c1d16e34da4e615e9ee7c9e9, type: 3}
+  blueAlertSound: {fileID: 8300000, guid: 5dac0c5551912bc4fb6745a092ccb085, type: 3}
   totalDestroyedAsteroidCount: 0
   destroyedAsteroidCount: 0
   allAsteroidDestroyed: 0

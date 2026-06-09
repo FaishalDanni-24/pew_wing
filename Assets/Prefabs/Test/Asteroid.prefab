@@ -190,6 +190,8 @@ MonoBehaviour:
   smallAstPrefab: {fileID: 7398100256225337200, guid: 518b2e51dcb08ee43a43403e13c2fe37, type: 3}
   powerPrefab: {fileID: 0}
   healthPrefab: {fileID: 0}
+  asteroidDestroyedSound: {fileID: 8300000, guid: eb7661659a9683d4586414311f67df80, type: 3}
+  cometDestroyedSound: {fileID: 8300000, guid: 2eaa5fd8f468a1847a987da1aa5f45a5, type: 3}
 --- !u!114 &-9156984344222402814
 MonoBehaviour:
   m_ObjectHideFlags: 0
