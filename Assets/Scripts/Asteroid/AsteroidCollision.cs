@@ -8,8 +8,13 @@ public class AsteroidCollision : MonoBehaviour
     public GameObject smallAstPrefab;
     public GameObject powerPrefab;
     public GameObject healthPrefab;
-    AsteroidStat stat;
+    
+    // --- TAMBAHAN AUDIO ---
+    public AudioClip asteroidDestroyedSound;
+    public AudioClip cometDestroyedSound;
+    // ----------------------
 
+    AsteroidStat stat;
 
     // Ketika collider masuk ke collider lain
     void OnCollisionEnter2D(Collision2D collision)
@@ -27,6 +32,11 @@ public class AsteroidCollision : MonoBehaviour
             Instantiate(smallAstPrefab, spawnCoords[1], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
             Instantiate(smallAstPrefab, spawnCoords[2], Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f)));
             
+            // Putar SFX Asteroid hancur
+            if (asteroidDestroyedSound != null) 
+            {
+                AudioSource.PlayClipAtPoint(asteroidDestroyedSound, Camera.main.transform.position, 1f);
+            }
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddNumSpawned(-1);
             Destroy(gameObject);
         }
@@ -50,6 +60,10 @@ public class AsteroidCollision : MonoBehaviour
                 default:
                     break;
             }
+            
+            // Putar SFX Asteroid hancur
+            if (asteroidDestroyedSound != null) AudioSource.PlayClipAtPoint(asteroidDestroyedSound, transform.position);
+
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
             GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(stat.score);
             Destroy(gameObject);
@@ -58,6 +72,11 @@ public class AsteroidCollision : MonoBehaviour
         // Tabrakan laser dengan comet
         if (collision.gameObject.CompareTag("Projectile") && stat.comet)
         {
+            // Putar SFX Comet hancur
+            if (cometDestroyedSound != null) 
+            {
+                AudioSource.PlayClipAtPoint(cometDestroyedSound, Camera.main.transform.position, 1f);
+            }
             GameObject.Find("Spawner").GetComponent<ObjectSpawner>().AddCount();
             GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(stat.score*10);
             Destroy(gameObject);
@@ -71,7 +90,6 @@ public class AsteroidCollision : MonoBehaviour
         }        
     }
 
-    // Dijalankan sekali saat load script
     void Awake()
     {
         stat = GetComponent<AsteroidStat>();

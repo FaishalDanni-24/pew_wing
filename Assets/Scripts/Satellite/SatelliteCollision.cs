@@ -7,12 +7,20 @@ public class SatelliteCollision : MonoBehaviour
     // Atribut
     SatelliteStat stat;
 
+    // --- TAMBAHAN AUDIO ---
+    public AudioClip satelliteHitSound;
+    // ----------------------
 
     // Ketika tabrakan antar dua collider
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
+            // Putar SFX Satelit terkena tembakan
+            if (satelliteHitSound != null) 
+            {
+                AudioSource.PlayClipAtPoint(satelliteHitSound, Camera.main.transform.position, 1f);
+            }
             GameObject.Find("Player").GetComponent<PlayerStat>().AddScore(-stat.score);
             Destroy(gameObject);
         }
@@ -27,7 +35,6 @@ public class SatelliteCollision : MonoBehaviour
         }
     }
 
-    // Dijalankan sekali saat load script
     void Awake()
     {
         stat = GetComponent<SatelliteStat>();

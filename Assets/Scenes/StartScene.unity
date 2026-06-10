@@ -756,6 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce6b3945c72e1149965475e6b3ba3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiClickSound: {fileID: 8300000, guid: 812d3a4306b68694a9e93ec39f54c7a8, type: 3}
 --- !u!4 &1075472177
 Transform:
   m_ObjectHideFlags: 0
