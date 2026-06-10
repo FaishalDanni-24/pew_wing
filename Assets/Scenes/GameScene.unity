@@ -264,6 +264,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &561920760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 989404396192923714, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
+  m_PrefabInstance: {fileID: 2128156124}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561920746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6cef91fe451d145ac7b4964c8845bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579979246
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11f565e5d49c094cb8d8dee9f09ca9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStat: {fileID: 561920759}
+  playerStat: {fileID: 561920760}
   scoreText: {fileID: 579979248}
 --- !u!1 &601889871
 GameObject:
@@ -463,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e444be3b3c61849a54883d09578ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStat: {fileID: 561920759}
+  playerStat: {fileID: 561920760}
   healthBarImage: {fileID: 601889874}
   healthSprites:
   - {fileID: -1875352087, guid: 153f86c64f7500640aa661987293f476, type: 3}
@@ -5289,7 +5300,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8239664297365437470, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 561920756}
   m_SourcePrefab: {fileID: 100100000, guid: 28b43384436a0ac4a84884bee7bdd10b, type: 3}
 --- !u!1001 &4041556703349512672
 PrefabInstance:
