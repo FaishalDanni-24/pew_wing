@@ -7,8 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     static string currGameScene;
-    static int playerScore;
-    static int playerHealth;
+    public static int playerScore;
+    public static int playerHealth;
+    public Animator transition;
+    public float transitionTime = 1f;
+    static bool isChangingScene = false;
+
 
     // --- TAMBAHAN AUDIO & TRANSISI ---
     public AudioClip uiClickSound;
@@ -19,15 +23,46 @@ public class GameManager : MonoBehaviour
     // Method yang dipakai GameManager
     public static void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        Instance.StartCoroutine(Instance.LoadLevel(sceneName));
     }
     
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+    transition.SetTrigger("Start"); // terang ke gelap
+    yield return new WaitForSeconds(transitionTime);
+
+    currGameScene = sceneName;
+    SceneManager.sceneLoaded += OnSceneLoaded;
+    SceneManager.LoadScene(sceneName);
+    }
+
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        transition.SetTrigger("End");
+        isChangingScene = false;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
     public static void IsGameOver()
     {
-        if (playerHealth <= 0 || GameObject.Find("Spawner").GetComponent<ObjectSpawner>().GetRound(true) == GameObject.Find("Spawner").GetComponent<ObjectSpawner>().GetRound(false)-1)
+       if (isChangingScene) return;
+
+        bool isDead = playerHealth <= 0;
+    
+        bool isLastRound = false;
+        GameObject spawner = GameObject.Find("Spawner");
+        if (spawner != null)
         {
-            currGameScene = "GameOverScene";
-            ChangeScene(currGameScene);
+            ObjectSpawner objectSpawner = spawner.GetComponent<ObjectSpawner>();
+            isLastRound = objectSpawner.GetRound(true) == objectSpawner.GetRound(false) - 1;
+        }
+
+        if (isDead || isLastRound)
+        {
+            isChangingScene = true;
+            ChangeScene("GameOverScene");
         }
     }
     
@@ -84,6 +119,7 @@ public class GameManager : MonoBehaviour
         audioSource.spatialBlend = 0f; // Set ke 2D standar agar volume terdengar merata penuh
 
         isTransitioning = false; 
+        isChangingScene = false;
         currGameScene = SceneManager.GetActiveScene().name;
     }
 
@@ -97,10 +133,13 @@ public class GameManager : MonoBehaviour
                 InputChangeScene("GameScene");
                 break;
             case "GameScene":
-                playerHealth = GameObject.Find("Player").GetComponent<PlayerStat>().GetHealth();
-                playerScore = GameObject.Find("Player").GetComponent<PlayerStat>().GetScore();
+            GameObject player = GameObject.Find("Player");
+                if (player == null) return;
+                playerHealth = player.GetComponent<PlayerStat>().GetHealth();
+                playerScore = player.GetComponent<PlayerStat>().GetScore();
+                Debug.Log("Health: " + playerHealth + " | isChangingScene: " + isChangingScene);
                 IsGameOver();
-                break;
+    break;
             case "GameOverScene":
                 // Saat berada di GameOverScene, menekan spasi akan memicu perpindahan kembali ke StartScene
                 InputChangeScene("StartScene");
