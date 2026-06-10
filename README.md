@@ -3,6 +3,7 @@
 Permainan Asteroid menggunakan Game Engine Unity<br><hr>
 
 # Pengembang<br>
+Maisan Latief (337240005)<br>
 Daffa Ahmad Farhan (3337240034)<br>
 Altaf Hafeesa Imtiaz (3337240054)<br>
 Faishal Danni (3337240072)<br>
@@ -72,4 +73,5 @@ git push origin nama_branch
 2. Git LFS wajib diinstal, dan run command git lfs install minimal sekali
 3. Git LFS digunakan untuk file data besar (Biasanya aset seperti Sprite, Music, Model, dll)
 4. Branch main hanya untuk fitur yang sudah dipastikan dapat bekerja tanpa error/bug, buat branch jika sedang membuat fitur
-5. Jika ada yang kurang, silahkan hubungi owner repo
+5. Konten yang tidak dibuat oleh pengembang, dimasukkan ke CREDITS.md untuk daftarnya
+6. Jika ada yang kurang, silahkan hubungi owner repo
