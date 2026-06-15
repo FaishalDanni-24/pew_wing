@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
     // ---------------------------------
 
     // Method yang dipakai GameManager
+    public static void InputExit()
+    {
+        if (Input.GetButtonDown("Cancel")){Application.Quit();}
+    }
     public static void ChangeScene(string sceneName)
     {
         Instance.StartCoroutine(Instance.LoadLevel(sceneName));
@@ -131,6 +135,7 @@ public class GameManager : MonoBehaviour
             case "StartScene":
                 // Saat berada di StartScene, menekan spasi akan memicu perpindahan ke GameScene
                 InputChangeScene("GameScene");
+                InputExit();
                 break;
             case "GameScene":
             GameObject player = GameObject.Find("Player");
@@ -143,6 +148,7 @@ public class GameManager : MonoBehaviour
             case "GameOverScene":
                 // Saat berada di GameOverScene, menekan spasi akan memicu perpindahan kembali ke StartScene
                 InputChangeScene("StartScene");
+                InputExit();
                 break;
                 
             default:
