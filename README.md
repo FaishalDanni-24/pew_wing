@@ -3,7 +3,7 @@
 Permainan Asteroid menggunakan Game Engine Unity<br><hr>
 
 # Pengembang<br>
-Maisan Latief (337240005)<br>
+Maisan Latief (3337240005)<br>
 Daffa Ahmad Farhan (3337240034)<br>
 Altaf Hafeesa Imtiaz (3337240054)<br>
 Faishal Danni (3337240072)<br>
